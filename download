@@ -1,9 +1,0 @@
-node_modules/
-dist/
-.sites-runtime/
-test-output/
-
-# Generated local QA fixtures (npm run qa)
-tests/browser/*.html
-tests/browser/main.js
-supabase-config.js
