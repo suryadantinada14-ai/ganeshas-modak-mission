@@ -1,0 +1,51 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ganeshas-modak-mission@3.0.0 test
+> node --test tests/*.test.mjs
+
+✔ game starts with complete festival objective targets (1.544311ms)
+✔ start and movement work (0.47034ms)
+✔ running creates noise (0.373854ms)
+✔ noise moves Parvati to suspicious (0.303798ms)
+✔ festival box puzzle unlocks golden modak (0.559946ms)
+✔ wrong puzzle sequence resets and creates noise (0.20502ms)
+✔ rangoli completion updates objective (0.250418ms)
+✔ Mushak switch toggles active character (0.653927ms)
+✔ Mushak respects ordinary walls but can use the tiny passage gate (0.274654ms)
+✔ countdown ticks while playing (1.79551ms)
+✔ hide works near a hiding spot (0.429108ms)
+✔ golden modak spawn is reachable after box puzzle (0.273353ms)
+✔ Parvati pathfinding patrols across room boundaries instead of sticking to walls (34.67501ms)
+✔ Mushak can activate the real secret lever interaction (0.770483ms)
+✔ full festival objective path can reach celebration (3.092669ms)
+✔ exact vision occlusion blocks thin walls and a corner crossing (1.874209ms)
+✔ Mushak scouting does not make unattended Ganesha invisible (0.607116ms)
+✔ switch can always return from distant secret room (0.314004ms)
+✔ pause and puzzle block hidden world actions (0.436459ms)
+✔ noise only heard inside advertised radius and targets exact source (1.076585ms)
+✔ rangoli retry earns 100 and first attempt 150 (0.729081ms)
+✔ catch adds ten seconds to result time and resets safely only once (0.329998ms)
+✔ movement uses bounded time step to avoid tunnelling (0.457661ms)
+✔ restart clears puzzles, score, timer and tutorial (0.397009ms)
+✔ AI visits every calm patrol point with closed gate (99.180963ms)
+✔ all five AI states transition with sight, lost sight and route recovery (26.774154ms)
+✔ puzzle pauses both clocks; expiry continues safely as free play (0.385151ms)
+✔ rangoli cannot regain perfect bonus by closing after a mistake (0.234253ms)
+✔ completion works without the optional secret and cannot award final bonus twice (0.6891ms)
+✔ records retain independent best score, fastest time and lowest catches (0.929814ms)
+✔ leaderboard is bounded, typed and handles corrupt or blocked storage (0.62295ms)
+✔ onboarding teaches movement first and retires a successful hide prompt (1.054342ms)
+Physical route: 108s, 1886 points, 6 modaks, 11 festival items.
+✔ physical route traverses doorways, all puzzles, mouse-only opening, lever, every pickup and celebration (158.948188ms)
+✔ Supabase integration is safely disabled without public configuration (3.483187ms)
+✔ index contains every UI control referenced by the game shell (6.776469ms)
+✔ browser entry imports local modules and required files exist (3.357418ms)
+✔ mobile CSS exposes touch controls and keeps the challenge timer visible (4.24697ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.435132

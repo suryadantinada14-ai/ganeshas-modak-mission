@@ -1,41 +1,48 @@
-# Ganesha's Modak Mission — Festival Edition
+# Ganesha’s Modak Mission
+**Contest Polish v3 · Sneak. Solve. Celebrate.**
 
-A complete, family-friendly Ganesh Chaturthi stealth and festival-preparation browser game built with JavaScript, Canvas 2D, HTML and CSS. It has no runtime or build dependencies; the included Node scripts provide local serving and static packaging.
+### Goal
+Help prepare a Ganesh Chaturthi celebration in one festive home/pandal. Collect modaks and festival items, solve short puzzles, and use hiding and distractions while Maa Parvati tends to the preparations. Being caught only resets the checkpoint and adds a time/score penalty.
 
-## Run
+### Controls
+Desktop: **WASD / arrows** move · **Shift** run · **E** interact · **Space** hide/leave cover · **Q** switch Ganesha/Mushak · **Tab** objectives · **Esc** pause/back. Menus support Tab, Shift+Tab and Enter.
 
-Requires Node.js 18 or newer.
+Mobile: direction pad, **USE**, hold **RUN**, **HIDE**, **MUSHAK/GANESHA**, **OBJECTIVES**, and **Pause**. **Sound on/off** is optional.
 
+### How to win
+Collect any 5 of 6 modaks, 3 flowers, 3 durva, 2 diyas, 3 decorations, and complete the rangoli. The golden modak comes from the Festival Box; Mushak can retrieve the optional secret modak. The eight-minute festival clock becomes free play when it expires. Replay for under 5:00, no catches, or the secret.
+
+### Technology
+HTML, CSS, JavaScript ES modules, Canvas 2D and Web Audio. Node.js scripts serve and build the project. No runtime dependency is required. The default build uses local records; an optional Supabase configuration enables a shared leaderboard without accounts or unnecessary personal data.
+
+### Assets
+Original procedural Canvas drawings and synthesized audio; system fonts and emoji. No external game artwork or commercial music. Coding and artwork code were developed with AI assistance; confirm organizer permission for AI tools.
+
+### Running locally
+Requires Node.js 18+; no installation step is needed.
 ```sh
-npm ci
 npm run dev
 ```
+Open `http://localhost:5173`. Use a web server, not a `file://` URL.
 
-Open the local address printed by the development server. Run `npm test` for deterministic gameplay tests and `npm run build` for the production website in `dist/`.
+### Build
+```sh
+npm run build
+```
+Upload the **contents** of `dist/` to any static host. Relative asset paths also support a subdirectory.
 
-## What is included
+### Tests
+```sh
+npm test
+```
+See `TESTING.md` for evidence and remaining device checks. `npm run qa` generates local-only browser fixtures at `/tests/browser/qa.html`; these never enter `dist/`.
 
-- Skippable four-scene Ganesh Chaturthi cinematic opening.
-- One connected level: puja room, storage, secret passage, courtyard, living room and kitchen.
-- Ganesha movement, running, interactions, hiding, checkpoints and mobile controls.
-- Maa Parvati five-state AI: calm, suspicious, alert, search and return, with vision cone, line-of-sight, sound investigation and grid pathfinding through room doorways.
-- Bell/pot distractions and run-generated noise.
-- Five modaks: two normal, one special, one golden and one secret, with score tiers.
-- Festival Box sequence puzzle, Diya sequence puzzle and Rangoli mini-game.
-- Mushak character switching, narrow-route scouting and a secret-passage lever.
-- Festival preparation objectives for modaks, flowers, durva, diyas, rangoli and decorations.
-- Eight-minute optional challenge clock. Reaching zero does not end the game; play continues as free play.
-- Scoring bonuses, playful performance rating, final celebration, replay and local-only leaderboard.
-- Synthesized collection/alert/victory cues plus a subtle opt-in festival rhythm. No external audio or image assets are required.
+### Supabase shared leaderboard (optional)
 
-## Controls
+1. Create a Supabase project.
+2. Open **SQL Editor** and run `supabase-schema.sql`.
+3. Copy `supabase-config.example.js` to `supabase-config.js`.
+4. Set the project URL and publishable/anon key in `supabase-config.js`. Never use a service-role key in browser code.
+5. Run `npm run build` and deploy the resulting `dist/` contents.
 
-Desktop: WASD / arrows move, Shift run, E interact, Space hide, Q switch Ganesha/Mushak, Tab objectives, Escape pause.
-
-Mobile: direction pad plus Use, Run, Hide and Mushak/Ganesha controls.
-
-## Respect and safety
-
-Ganesha and Maa Parvati are represented affectionately. There is no violence, injury, attack, blood, gore, weapons, death, religious mockery, humiliation or horror involving deities. Maa Parvati is a loving parent NPC; being caught creates a humorous checkpoint/time/score consequence only.
-
-All visual art is original procedural Canvas artwork. Audio is original browser synthesis. There are no third-party game assets, fonts, analytics, accounts, network services or paid assets.
+The game submits only validated result fields: score, completion time, catches, modak count, secret-found flag and festival-item count. If Supabase is unavailable, the result remains available in local browser storage.
