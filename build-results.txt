@@ -1,7 +1,0 @@
-npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
-
-> ganeshas-modak-mission@3.0.0 build
-> node scripts/build.mjs
-
-Built static game in dist/
-Verified 8 local assets/modules; 10 production files; 85674 bytes. No missing imports or QA fixtures.
